@@ -27,19 +27,40 @@ El objetivo es mejorar poco a poco, experimentar con componentes y aprender a co
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" width="65" alt="Dart">
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width="65" alt="Flutter">
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/androidstudio/androidstudio-original.svg" width="65" alt="Android Studio">
+
+<br><br><br>
+
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Tecnología</th>
+        <th>Uso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dart</td>
+        <td>Lenguaje de programación</td>
+      </tr>
+      <tr>
+        <td>Flutter</td>
+        <td>Desarrollo de interfaces</td>
+      </tr>
+      <tr>
+        <td>Android Studio</td>
+        <td>Entorno de desarrollo</td>
+      </tr>
+      <tr>
+        <td>Git & GitHub</td>
+        <td>Control de versiones</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-| Tecnología | Uso |
-|---|---|
-| Dart | Lenguaje de programación |
-| Flutter | Desarrollo de interfaces |
-| Android Studio | Entorno de desarrollo |
-| Git & GitHub | Control de versiones |
-
 ## Estructura del repositorio
 
 ```text
