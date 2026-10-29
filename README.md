@@ -32,7 +32,7 @@ El objetivo es mejorar poco a poco, experimentar con componentes y aprender a co
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/androidstudio/androidstudio-original.svg" width="65" alt="Android Studio">
 
-<br><br><br>
+<br><br>
 
   <table align="center">
     <thead>
