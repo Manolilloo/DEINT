@@ -1,0 +1,29 @@
+# Ignorar todo inicialmente
+/*
+
+# Archivos de configuración
+!/.gitignore
+!/README.md
+!/.metadata
+!/analysis_options.yaml
+!/pubspec.yaml
+!/pubspec.lock
+
+# Plataforma Android
+!/android/
+!/android/**
+
+# Código y recursos
+!/assets/
+!/assets/**
+!/lib/
+!/lib/**
+
+# Archivos generados y cachés
+**/.gradle/
+**/build/
+.dart_tool/
+.flutter-plugins-dependencies
+.pub/
+.pub-cache/
+.widget_preview/
