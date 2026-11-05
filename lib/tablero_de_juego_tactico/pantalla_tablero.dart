@@ -145,6 +145,81 @@ class PantallaTablero extends StatelessWidget {
             Expanded(
               child: Container(
                 color: Colors.grey[200],
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        'Historial de Movimientos',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.blue,
+                              child: Text('1', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 1 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla C4'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.red,
+                              child: Text('2', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 2 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla C4'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.blue,
+                              child: Text('3', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 1 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla B3'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.red,
+                              child: Text('4', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 2 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla D5'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.blue,
+                              child: Text('5', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 1 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla A2'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                          ListTile(
+                            leading: const CircleAvatar(
+                              backgroundColor: Colors.red,
+                              child: Text('6', style: TextStyle(color: Colors.white)),
+                            ),
+                            title: const Text('Jugador 2 movió pieza'),
+                            subtitle: const Text('Caballero a la casilla B1'),
+                            trailing: const Icon(Icons.history),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
