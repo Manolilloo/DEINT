@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'pantalla_imagen.dart';
@@ -7,46 +8,69 @@ class Store extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ListTileColorImg> items = [
-      ListTileColorImg(
-        image: Image.asset('assets/images/pablomotos.jpg'),
-        nombre: 'Palblo',
-        color: Colors.green,
-        descripcion: 'Este es Pablo',
+    final List<ListTileColorImg> items = [
+      const ListTileColorImg(
+        datos: DatosImagen(
+          rutaImagen: 'assets/images/pablomotos.jpg',
+          nombre: 'Pablo',
+          color: Colors.green,
+          descripcion: 'Este es Pablo',
+        ),
+        tipoRuta: 'anonima',
       ),
-      ListTileColorImg(
-        image: Image.asset('assets/images/dandy.jpg'),
-        nombre: 'Dandy',
-        color: Colors.red,
-        descripcion: '👌👌👌',
+
+      const ListTileColorImg(
+        datos: DatosImagen(
+          rutaImagen: 'assets/images/dandy.jpg',
+          nombre: 'Dandy',
+          color: Colors.red,
+          descripcion: '👌👌👌',
+        ),
+        tipoRuta: 'nombrada',
       ),
-      ListTileColorImg(
-        image: Image.asset('assets/images/chilling.jpg'),
-        nombre: 'Mi compi',
-        color: Colors.grey,
-        descripcion: 'Mi compiii',
+
+      const ListTileColorImg(
+        datos: DatosImagen(
+          rutaImagen: 'assets/images/chilling.jpg',
+          nombre: 'Mi compi',
+          color: Colors.grey,
+          descripcion: 'Mi compiii',
+        ),
+        tipoRuta: 'generada',
       ),
-      ListTileColorImg(
-        image: Image.asset('assets/images/jorgejavi.jpg'),
-        nombre: 'JorgeJavi',
-        color: Colors.redAccent,
-        descripcion: 'This is Jorge',
+
+      const ListTileColorImg(
+        datos: DatosImagen(
+          rutaImagen: 'assets/images/jorgejavi.jpg',
+          nombre: 'JorgeJavi',
+          color: Colors.redAccent,
+          descripcion: 'This is Jorge',
+        ),
+        tipoRuta: 'generada',
       ),
-      ListTileColorImg(
-        image: Image.asset('assets/images/image_2.jpg'),
-        nombre: 'Gafas para ver',
-        color: Colors.white,
-        descripcion: 'Fotaca 5',
+
+      const ListTileColorImg(
+        datos: DatosImagen(
+          rutaImagen: 'assets/images/image_2.jpg',
+          nombre: 'Gafas para ver',
+          color: Colors.white,
+          descripcion: 'Fotaca 5',
+        ),
+        tipoRuta: 'generada',
       ),
     ];
+
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text('STORE')),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('STORE'),
+      ),
       body: ListView.separated(
-        itemCount: 5,
+        itemCount: items.length,
         itemBuilder: (context, index) {
           return items[index];
         },
-        separatorBuilder: (BuildContext context, int index) {
+        separatorBuilder: (context, index) {
           return const Divider(
             height: 1,
             thickness: 1,
@@ -59,46 +83,71 @@ class Store extends StatelessWidget {
 }
 
 class ListTileColorImg extends StatelessWidget {
-  String _nombre;
-  String _descripcion;
-  Color _color;
-  Image _image;
+  final DatosImagen datos;
+  final String tipoRuta;
 
-  ListTileColorImg({
-    required this._image,
-    required this._nombre,
-    required this._color,
-    required this._descripcion,
+  const ListTileColorImg({
+    required this.datos,
+    required this.tipoRuta,
     super.key,
   });
+
+  void abrirPantalla(BuildContext context) {
+
+    // RUTA ANONIMA
+    if (tipoRuta == 'anonima') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PantallaImagen(datos: datos),
+        ),
+      );
+
+      // RUTA NOMBRADA
+    } else if (tipoRuta == 'nombrada') {
+      Navigator.pushNamed(
+        context,
+        '/imagen-nombrada',
+        arguments: datos,
+      );
+
+      // RUTA GENERADA
+    } else {
+      Navigator.pushNamed(
+        context,
+        '/imagen-generada',
+        arguments: datos,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       minTileHeight: 80,
-      leading: SizedBox(width: 40, height: 40, child: _image),
+      leading: SizedBox(
+        width: 40,
+        height: 40,
+        child: Image.asset(
+          datos.rutaImagen,
+          fit: BoxFit.cover,
+        ),
+      ),
       title: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(_nombre), Text(_descripcion)],
+        children: [
+          Text(datos.nombre),
+          Text(datos.descripcion),
+        ],
       ),
       trailing: IconButton(
         icon: const Icon(Icons.chevron_right),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => PantallaImagen(backgroundColor: _color, image: _image, nombre: _nombre,),
-            ),
-          );
+          abrirPantalla(context);
         },
       ),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => PantallaImagen(backgroundColor: _color, image: _image, nombre: _nombre,),
-          ),
-        );
+        abrirPantalla(context);
       },
     );
   }
