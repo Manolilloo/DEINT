@@ -2,16 +2,15 @@ import 'package:carmelo/solar_system_actividad/planet_data.dart';
 import 'package:flutter/material.dart';
 
 class DetallePlaneta extends StatelessWidget {
+  final PlanetData planet;
 
-
-  const DetallePlaneta({super.key,});
+  const DetallePlaneta({super.key, required this.planet});
 
   /*Esta va a ser la pantalla donde se muestra la info
   * de cada planeta una vez pulses en uno. y para volver
   * le das al icono de arriba a la izq*/
   @override
   Widget build(BuildContext context) {
-    final planet = ModalRoute.of(context)!.settings.arguments as PlanetData;
     return Scaffold(
       appBar: AppBar(
         title: Text(planet.nombre),
@@ -23,7 +22,22 @@ class DetallePlaneta extends StatelessWidget {
           icon: const Icon(Icons.chevron_left),
         ),
       ),
-      body: Center(child: Image.asset(planet.imagenRuta)),
+      body: Center(
+        child: Column(
+         mainAxisAlignment: .center,
+          children: [
+            Image.asset(planet.imagenRuta, width: 300, height: 300),
+            SizedBox(height: 20),
+
+            /*he tenido que poner esto porque se veian muy pequeñas las letras*/
+            Text(
+              planet.descripcion,
+              textAlign: .center,
+              style: const TextStyle(fontSize: 24),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
