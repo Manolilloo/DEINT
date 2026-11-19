@@ -1,3 +1,7 @@
+/*Este es el archivo que va a guardar la info de los planetas
+y las guarda en una lista para que luego se pueda recorrer en el
+solar_system.dart*/
+
 class PlanetData {
   final String nombre;
   final String distancia;
