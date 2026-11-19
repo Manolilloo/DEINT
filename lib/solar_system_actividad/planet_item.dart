@@ -23,7 +23,7 @@ class PlanetTile extends StatelessWidget {
         trailing: const Icon(Icons.navigate_next_rounded),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const DetallePlaneta()));
+              MaterialPageRoute(builder: (context) =>  DetallePlaneta(planet: planet,)));
         }
     );
   }
